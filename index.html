@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="FlattrNowApp">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>FlattrNow</title>
+    <script src="angular.min.js"></script>
+    <script src="https://api.flattr.com/js/0.6/load.js?mode=manual"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="MainController">
+    <h1>FlattrNow</h1>
+
+    <p>
+      Show a Flattr button for arbitrary things. Freely Flattr people
+      for their things without their consent!
+    </p>
+    <p>
+      For reference, see
+      <a href="http://developers.flattr.net/auto-submit/">their documentation</a>.
+    </p>
+
+    <form ng-submit="refresh()">
+      <p>
+	<label>
+	  Username:
+	  <tt>https://flattr.com/profile/</tt><input ng-model="user_id">
+	</label>
+      </p>
+      <p>
+	<label>
+	  URL:
+	  <input ng-model="url">
+	</label>
+      </p>
+      <p>
+	<label>
+	  <i>Title:</i>
+	  <input ng-model="title">
+	</label>
+      </p>
+      <p>
+	<label>
+	  <i>Description:</i>
+	  <input ng-model="description">
+	</label>
+      </p>
+      <p>
+	<label>
+	  <i>Language:</i>
+	  <input ng-model="language">
+	</label>
+      </p>
+      <p>
+	<label>
+	  <i>Tags:</i>
+	  <input ng-model="tags">
+	</label>
+      </p>
+      <p>
+	<label>
+	  <i>Hidden:</i>
+	  <input type="checkbox" ng-model="hidden">
+	</label>
+      </p>
+      <p>
+	<label>
+	  <i>Category:</i>
+	  <input ng-model="category">
+	</label>
+      </p>
+      <input type="submit" value="Refresh">
+    </form>
+    <div id="button"></div>
+  </body>
+</html>
